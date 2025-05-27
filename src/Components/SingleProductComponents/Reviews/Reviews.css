@@ -1,0 +1,25 @@
+.new-products-container {
+    width: 88%;
+    /* height: 500px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: baseline;
+    gap: 25px;
+    margin: 30px auto;
+}
+
+.new-products-card {
+    width: 230px;
+    height: 290px;
+    box-shadow: 3px 3px 15px rgb(230, 230, 230);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.new-products-name {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 30px;
+}

@@ -1,0 +1,63 @@
+.user-model {
+    width: 240px;
+    height: 190px;
+    background-color: white;
+    position: absolute;
+    right: 7%;
+    top: 90px;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 3px 3px 15px rgb(230, 230, 230);
+}
+
+.user-content {
+    display: flex;
+    gap: 15px;
+}
+
+.user-content>svg {
+    cursor: pointer;
+}
+
+.user-gmail {
+    font-size: 18px;
+    font-weight: 300;
+    color: #498ef7;
+    cursor: pointer;
+}
+
+.gmail {
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.orders-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.orders-content>svg {
+    cursor: pointer;
+}
+
+.orders-content>.order {
+    color: #0C0C0C;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.user-cross {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    cursor: pointer;
+    top: 17px;
+    right: 18px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgb(230, 230, 230);
+}

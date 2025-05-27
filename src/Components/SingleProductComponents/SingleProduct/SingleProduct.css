@@ -1,0 +1,185 @@
+.product-info-container {
+    width: 88%;
+    margin: 60px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.img-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img {
+    height: 280px;
+    margin: 20px;
+}
+
+.product-small-imgs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.product-details {
+    width: 30%;
+    margin-top: 30px;
+}
+
+.product-name {
+    font-size: 20px;
+    font-size: 600;
+}
+
+.ratings {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sold {
+    color: #717171;
+}
+
+.detail {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detail>li {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.detail>p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.show-more {
+    font-size: 14px;
+    color: #0C68F4;
+    margin-left: 70px;
+}
+
+.right-angle {
+    width: 8px;
+}
+
+.price-card {
+    width: 30%;
+    height: 300px;
+    box-shadow: 3px 3px 15px rgb(230, 230, 230);
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.last-price {
+    font-size: 14px;
+    font-weight: 300;
+    color: #717171;
+}
+
+.pay-content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pay-content>p {
+    font-weight: 300;
+    color: #444444;
+}
+
+.installment-period {
+    font-size: 12px;
+    font-weight: 300;
+    color: #444444;
+    margin-left: 20px;
+}
+
+.days-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.day-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #EDEDED;
+    padding: 3px 5px;
+    border-radius: 8px;
+}
+
+.day-card>.number {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+}
+
+.day-card>.day {
+    font-size: 14px;
+    font-weight: 300;
+    color: #444444;
+}
+
+.price-par-month {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.price-par-month>span {
+    font-size: 14px;
+    font-weight: 300;
+    color: #717171
+}
+
+.buy-now-btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #0C68F4;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-cart {
+    width: 100%;
+    padding: 12px 0;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    color: #0C68F4;
+    border: 2px solid #0C68F4;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}

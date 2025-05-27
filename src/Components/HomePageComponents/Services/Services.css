@@ -1,0 +1,8 @@
+.our-services {
+    width: 100%;
+    margin: 50px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}

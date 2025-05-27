@@ -1,0 +1,23 @@
+main {
+    width: 88%;
+    margin: auto;
+}
+
+.products-names {
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin: 70px auto 0;
+}
+
+.product-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,9 @@
+.faq-page{
+    width: 100%;
+    height: 50vh;
+    margin-top: 100px;
+}
+
+.faq-page>h1{
+    text-align: center;
+}
