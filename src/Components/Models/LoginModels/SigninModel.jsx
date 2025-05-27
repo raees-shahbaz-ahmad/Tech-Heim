@@ -3,7 +3,7 @@ import { signin } from '../../../Apis/signin';
 import { showToast } from '../../Toast';
 import Cookies from 'js-cookie';
 
-const Signinmodel = ({ onClose }) => {
+const SigninModel = ({ onClose }) => {
 
     const [signinFormData, setSigninFormData] = useState({ email: '', password: '' });
 
@@ -42,4 +42,4 @@ const Signinmodel = ({ onClose }) => {
     )
 }
 
-export default Signinmodel;
+export default SigninModel;

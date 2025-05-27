@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Signinmodel from "./Signinmodel";
+import SigninModel from './SigninModel';
 import SignupModel from "./SignupModel";
 import "../LoginModels/LoginModel.css";
 
 const LoginModel = ({ onClose }) => {
 
     const [activeForm, setActiveForm] = useState('signin-content');
-    
+
 
     return (
         <div className="models">
@@ -25,7 +25,7 @@ const LoginModel = ({ onClose }) => {
                                 Log in to Tech Heim
                             </div>
 
-                            <Signinmodel onClose={onClose} />
+                            <SigninModel onClose={onClose} />
 
                             <p className="forgot-password">Forgot Password ?</p>
 
