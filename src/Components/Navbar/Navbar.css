@@ -14,6 +14,9 @@
 
 .logo img {
     height: 60px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links,
@@ -52,4 +55,70 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+}
+
+.bar {
+    height: 2px;
+    width: 18px;
+    background-color: #333;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 95%;
+        margin: auto;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .icon-links {
+        display: flex;
+        gap: 0.5rem;
+        margin-right: 30px;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
 }

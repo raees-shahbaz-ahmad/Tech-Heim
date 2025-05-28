@@ -7,8 +7,11 @@ import "../Navbar/Navbar.css";
 
 const Navbar = () => {
 
-    const [showSearhModel, setShowSearhModel] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
+
+    const [showSearhModel, setShowSearhModel] = useState(false);
     const handleSeacrhIconClick = () => {
         setShowSearhModel(true);
     }
@@ -20,7 +23,6 @@ const Navbar = () => {
 
 
     const [showCartModel, setShowCartModel] = useState(false);
-
     const handleCartIconClick = () => {
         setShowCartModel(true);
     }
@@ -32,7 +34,6 @@ const Navbar = () => {
 
 
     const [showProfile, setShowProfile] = useState(false);
-
     const handleUserIconClick = () => {
         setShowProfile(true);
     }
@@ -48,7 +49,13 @@ const Navbar = () => {
                 <img src="/logo.png" alt="Logo" />
             </div>
 
-            <ul className="nav-links">
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
+
+            <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/product">Products</Link></li>
                 <li><Link to="/blog">Blog</Link></li>

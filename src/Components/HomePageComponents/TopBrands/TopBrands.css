@@ -1,4 +1,4 @@
-.new-products {
+/* .new-products {
     width: 85%;
     margin: 50px auto 0;
 }
@@ -10,4 +10,63 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+} */
+
+.new-products {
+    width: 85%;
+    margin: 50px auto 0;
+}
+
+/* Top Brand Images Container */
+.top-brand-images {
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Brand Image Style (optional if you have individual images inside) */
+.top-brand-images img {
+    max-height: 80px;
+    max-width: 100px;
+    object-fit: contain;
+    flex: 1 1 auto;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .top-brand-images {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .top-brand-images img {
+        max-height: 70px;
+        max-width: 80px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .top-brand-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .top-brand-images img {
+        max-height: 60px;
+        max-width: 70px;
+    }
+
+    .new-products {
+        width: 90%;
+    }
 }

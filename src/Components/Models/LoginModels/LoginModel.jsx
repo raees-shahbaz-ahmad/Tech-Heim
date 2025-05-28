@@ -7,7 +7,6 @@ const LoginModel = ({ onClose }) => {
 
     const [activeForm, setActiveForm] = useState('signin-content');
 
-
     return (
         <div className="models">
             <div className="accounts">

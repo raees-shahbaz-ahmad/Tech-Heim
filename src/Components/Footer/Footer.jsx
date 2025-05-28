@@ -25,7 +25,7 @@ const Footer = () => {
                         <div className="heading">Contact us</div>
                         <li>123 Main Street,Anytown,USA</li>
                         <li>+1(555)-123-4567</li>
-                        <li>TechHiemSupport@gmail.com</li>
+                        <li>TechHiem@gmail.com</li>
                     </ul>
 
                 </div>
