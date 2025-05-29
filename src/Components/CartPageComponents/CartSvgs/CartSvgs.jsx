@@ -14,7 +14,7 @@ const CartSvgs = () => {
     }
 
     const handleOrderPage = () => {
-        navigate("/order");
+        navigate("/orders");
     }
 
     return (

@@ -63,7 +63,6 @@ const OrdersContent = () => {
                         />
 
                         <div className="order-content">
-                            {/* تمام آئٹمز کے نام دکھائیں */}
                             <div className="product-name">
                                 {order.items.map((item) => (
                                     <div key={item.id}>
@@ -73,7 +72,7 @@ const OrdersContent = () => {
                             </div>
 
                             <div className="product-price">
-                                {order.totalAmount}
+                                <p>Price: {order.totalAmount}</p>
                             </div>
                         </div>
 
