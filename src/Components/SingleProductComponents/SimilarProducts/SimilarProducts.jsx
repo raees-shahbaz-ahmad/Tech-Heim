@@ -5,7 +5,7 @@ const SimilarProducts = () => {
     return (
         <>
             <div className="similar-products-heading">Similar Products</div>
-            <div className="featured">
+            <div className="featured-2">
                 <div className="new-products-card">
                     <img className="new-product-img" src="./feature-6-img.png" />
                     <div className="sepration" style={{ border: "1px solid #b4b4b4", marginTop: "5px" }}></div>

@@ -1,6 +1,20 @@
+.search-model-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 999;
+    padding-top: 80px;
+}
+
 .user-model {
     width: 240px;
-    height: 190px;
+    height: auto;
     background-color: white;
     position: absolute;
     right: 7%;
@@ -8,15 +22,14 @@
     border-radius: 0 0 8px 8px;
     padding: 20px;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
+    z-index: 1000;
 }
 
 .user-content {
     display: flex;
     gap: 15px;
-}
-
-.user-content>svg {
-    cursor: pointer;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .user-gmail {
@@ -39,10 +52,6 @@
     margin: 20px 0;
 }
 
-.orders-content>svg {
-    cursor: pointer;
-}
-
 .orders-content>.order {
     color: #0C0C0C;
     font-size: 18px;
@@ -60,4 +69,53 @@
     padding: 5px;
     border-radius: 50%;
     background-color: rgb(230, 230, 230);
+}
+
+@media screen and (max-width: 768px) {
+    .user-model {
+        width: 90%;
+        right: 5%;
+        top: 80px;
+        padding: 15px;
+    }
+
+    .user-gmail {
+        font-size: 16px;
+    }
+
+    .orders-content>.order {
+        font-size: 16px;
+    }
+
+    .gmail {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .user-model {
+        width: 92%;
+        right: 4%;
+        top: 75px;
+        padding: 12px;
+    }
+
+    .user-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .orders-content {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .user-gmail,
+    .orders-content>.order {
+        font-size: 15px;
+    }
+
+    .gmail {
+        font-size: 11px;
+    }
 }

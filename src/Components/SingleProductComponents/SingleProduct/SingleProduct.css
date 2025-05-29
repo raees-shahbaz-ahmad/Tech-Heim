@@ -183,3 +183,91 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1024px) {
+    .product-info-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .product-details,
+    .price-card {
+        width: 80%;
+    }
+
+    .detail {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .show-more {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .product-small-imgs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .price-card {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-info-container {
+        flex-direction: column;
+        gap: 30px;
+        width: 95%;
+        margin-top: 30px;
+    }
+
+    .product-img {
+        height: 200px;
+    }
+
+    .product-details,
+    .price-card {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .product-name {
+        font-size: 18px;
+    }
+
+    .ratings {
+        gap: 5px;
+    }
+
+    .detail>li,
+    .detail>p {
+        font-size: 13px;
+    }
+
+    .pay-content,
+    .days-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .installment-period {
+        margin-left: 0;
+    }
+
+    .day-card {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px 12px;
+    }
+
+    .buy-now-btn,
+    .add-cart {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}

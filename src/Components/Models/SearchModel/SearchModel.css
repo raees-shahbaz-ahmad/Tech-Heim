@@ -1,13 +1,31 @@
+.search-model-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 999;
+    padding-top: 80px;
+}
+
 .search-model {
     width: 670px;
-    height: 360px;
+    height: auto;
+    max-height: 80vh;
     background-color: white;
     position: fixed;
     top: 25%;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
+    overflow-y: auto;
+    z-index: 1000;
 }
 
 .input-content {
@@ -15,21 +33,23 @@
 }
 
 .search-input {
-    width: 200px;
-    padding: 12px 250px 12px 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 50px 12px 10px;
     border-radius: 8px;
+    font-size: 14px;
 }
 
 .search-svg {
     position: absolute;
-    right: 33%;
+    right: -40px;
     top: 16%;
     cursor: pointer;
 }
 
 .search-cross {
     position: absolute;
-    right: 0%;
+    right: -75px;
     top: 16%;
     cursor: pointer;
 }
@@ -44,6 +64,7 @@
     width: 100%;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .most-searched {
@@ -112,27 +133,116 @@
     font-weight: 500;
 }
 
-.product-card-svg {
+.product-card-svg,
+.product-card-wish-svg {
     width: 25px;
     position: absolute;
     right: -30px;
-    top: 20px;
     fill: #063a88;
     z-index: 2;
     transition: transform 0.5s ease-in-out;
 }
 
+.product-card-svg {
+    top: 20px;
+}
+
 .product-card-wish-svg {
-    width: 25px;
-    position: absolute;
-    right: -31px;
     top: 50px;
-    fill: #063a88;
-    z-index: 2;
-    transition: transform 0.5s ease-in-out;
 }
 
 .searched-product-card:hover .product-card-svg,
 .searched-product-card:hover .product-card-wish-svg {
     transform: translateX(-40px);
+}
+
+/* =============================== */
+/* 📱 Responsive Styles            */
+/* =============================== */
+
+/* Tablets (≤768px) */
+@media screen and (max-width: 768px) {
+    .search-model {
+        width: 90%;
+        padding: 20px;
+        top: 20%;
+    }
+
+    .search-input {
+        width: 100%;
+        padding-right: 45px;
+    }
+
+    .search-svg {
+        right: -20px;
+    }
+
+    .search-cross {
+        right: -50px;
+    }
+
+    .most-searched {
+        grid-template-columns: 1fr;
+    }
+
+    .most-searched>div>li {
+        margin: 20px 0;
+        font-size: 16px;
+    }
+
+    .searched-product-card {
+        width: 140px;
+        height: 160px;
+    }
+}
+
+/* Mobile (≤480px) */
+@media screen and (max-width: 480px) {
+    .search-model {
+        width: 95%;
+        padding: 15px;
+        top: 10%;
+    }
+
+    .search-input {
+        font-size: 13px;
+        padding-right: 40px;
+    }
+
+    .search-svg,
+    .search-cross {
+        top: 14%;
+    }
+
+    .most-searched-heading {
+        font-size: 18px;
+    }
+
+    .most-searched>div>li {
+        font-size: 14px;
+    }
+
+    .searched-product-card {
+        width: 100px;
+        height: 140px;
+    }
+
+    .searched-product-name,
+    .searched-price,
+    .searched-rating {
+        font-size: 10px;
+    }
+
+    .product-card-svg,
+    .product-card-wish-svg {
+        width: 20px;
+    }
+
+    .product-card-svg {
+        top: 15px;
+    }
+
+    .product-card-wish-svg {
+        top: 40px;
+    }
 }

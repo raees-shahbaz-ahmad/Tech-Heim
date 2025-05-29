@@ -3,3 +3,13 @@
     font-weight: 500;
     margin: 30px 0 20px 100px;
 }
+
+.featured-2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+}

@@ -6,12 +6,12 @@ main {
 .products-names {
     width: 80%;
     height: 200px;
-    margin: auto;
+    margin: 70px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin: 70px auto 0;
+    overflow-x: auto;
 }
 
 .product-information {
@@ -20,4 +20,28 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    min-width: 150px;
+    /* Ensure each product stays visible */
+}
+
+/* ---------- RESPONSIVE STYLES ---------- */
+@media screen and (max-width: 768px) {
+    .products-names {
+        gap: 30px;
+    }
+
+    .product-information {
+        gap: 8px;
+        min-width: 130px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .products-names {
+        gap: 20px;
+    }
+
+    .product-information {
+        min-width: 100px;
+    }
 }

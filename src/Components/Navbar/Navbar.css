@@ -78,7 +78,7 @@
 
 @media (max-width: 768px) {
     .navbar {
-        width: 95%;
+        width: 100%;
         margin: auto;
     }
 

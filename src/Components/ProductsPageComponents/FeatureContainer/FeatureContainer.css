@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.feature-container {
+/* .feature-container {
     width: 100%;
     margin-top: 60px;
     display: flex;
@@ -60,4 +55,145 @@ a {
     font-size: 20px;
     cursor: pointer;
     margin-bottom: 10px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.feature-container {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Sidebar filters */
+.filters {
+    width: 20%;
+}
+
+/* Product section */
+.featured {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+}
+
+/* Product brand label */
+.brand {
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Heading area */
+.heading-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading-content>.heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.heading-content>.clear {
+    color: #0C68F4;
+}
+
+/* Result bar */
+.result {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* ============================= */
+/* 📱 Responsive Breakpoints     */
+/* ============================= */
+
+/* Tablet (992px and below) */
+@media screen and (max-width: 992px) {
+    .feature-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filters {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        order: -1;
+        /* Filters go to top */
+        margin-bottom: 20px;
+    }
+
+    .featured {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .heading-content {
+        /* flex-direction: column; */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .brand,
+    .result {
+        font-size: 18px;
+        margin: 0 0;
+    }
+}
+
+/* Mobile (768px and below) */
+@media screen and (max-width: 768px) {
+    .filters {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+    .brand,
+    .result,
+    .heading-content>.heading {
+        font-size: 16px;
+    }
+
+    .featured {
+        gap: 15px;
+    }
+}
+
+/* Extra Small (480px and below) */
+@media screen and (max-width: 480px) {
+
+    .brand,
+    .result,
+    .heading-content>.heading {
+        font-size: 14px;
+    }
+
+    .featured {
+        gap: 10px;
+    }
 }

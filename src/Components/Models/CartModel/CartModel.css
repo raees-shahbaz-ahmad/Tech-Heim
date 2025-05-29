@@ -1,5 +1,20 @@
+.search-model-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 999;
+    padding-top: 80px;
+}
+
 .cart-model {
     width: 460px;
+    max-width: 95%;
     height: 79vh;
     overflow-y: auto;
     position: fixed;
@@ -7,8 +22,6 @@
     top: 90px;
     background-color: white;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
-    /* position: absolute; */
-    right: 7%;
     padding: 20px;
     z-index: 999;
     border-radius: 0 0 8px 8px;
@@ -29,57 +42,55 @@
 
 .cart-product {
     width: 430px;
-    height: 170px;
+    max-width: 100%;
+    height: auto;
     background-color: white;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
     border-radius: 8px;
     display: flex;
-    /* justify-content: center; */
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 .cart-product>img {
     height: 150px;
     width: 130px;
+    object-fit: contain;
 }
 
 .cart-product-model {
     width: 400px;
-    height: 180px;
+    max-width: 100%;
+    height: auto;
     background-color: white;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
     border-radius: 8px;
     display: flex;
-    /* justify-content: center; */
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 .cart-product-model>img {
     height: 150px;
+    width: auto;
+    object-fit: contain;
 }
 
 .product-name {
     font-size: 16px;
     font-weight: 500;
-
 }
 
-.product-color {
-    font-size: 10px;
-    font-weight: 500;
-    color: #717171;
-    margin-top: 5px;
-}
-
+.product-color,
 .product-quantity {
     font-size: 10px;
     font-weight: 500;
     color: #717171;
-    margin: 5px 0 15px 0;
+    margin-top: 5px;
 }
 
 .delivery-content {
@@ -99,8 +110,8 @@
     width: 100%;
     margin-top: 10px;
     display: flex;
-    gap: 100px;
-    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    gap: 30px;
     align-items: center;
 }
 
@@ -123,16 +134,10 @@
 
 .cart-btn-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-.cart-btn-content>.total-price {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .total-price>p {
@@ -147,7 +152,9 @@
 }
 
 .cart-btn {
-    padding: 15px 108px;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
     font-size: 16px;
     background-color: #0C68F4;
     color: white;
@@ -155,7 +162,7 @@
     border-radius: 8px;
     white-space: nowrap;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .cart-cross {
@@ -168,4 +175,74 @@
     padding: 5px;
     border-radius: 50%;
     background-color: rgb(230, 230, 230);
+}
+
+@media screen and (max-width: 768px) {
+    .cart-model {
+        width: 90%;
+        right: 5%;
+        top: 80px;
+        padding: 15px;
+    }
+
+    .cart-product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-product-model {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-product>img,
+    .cart-product-model>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .price-content {
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-btn {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cart-model {
+        width: 90%;
+        right: 2.5%;
+        top: 70px;
+        padding: 12px;
+    }
+
+    .cart-product-container {
+        gap: 15px;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .product-color,
+    .product-quantity,
+    .delivery-content>p {
+        font-size: 9px;
+    }
+
+    .cart-btn {
+        font-size: 14px;
+    }
+
+    .total-price>.price {
+        font-size: 14px;
+    }
+
+    .delete-content>span {
+        font-size: 14px;
+    }
 }
