@@ -20,7 +20,7 @@ const SigninModel = ({ onClose }) => {
                 Cookies.set("token", result.data, { expires: 7 });
                 onClose();
                 showToast("Login Successfull", "green");
-            } else{
+            } else {
                 showToast("Failed to Login", "red");
             }
 
@@ -31,14 +31,16 @@ const SigninModel = ({ onClose }) => {
     }
 
     return (
-        <form className="input-content" onSubmit={handleSigninSubmit} >
+        <>
+            <form className="input-content" onSubmit={handleSigninSubmit} >
 
-            <input className="signin-email" type="text" name='email' placeholder="E-mail" onChange={handleSigninChange} />
+                <input className="signin-email" type="text" name='email' placeholder="E-mail" onChange={handleSigninChange} />
 
-            <input className="signin-password" type="password" name="password" placeholder="Password" onChange={handleSigninChange} />
+                <input className="signin-password" type="password" name="password" placeholder="Password" onChange={handleSigninChange} />
 
-            <button type='submit' className="login-btn">Log In</button>
-        </form>
+                <button type='submit' className="login-btn">Log In</button>
+            </form>
+        </>
     )
 }
 

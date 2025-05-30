@@ -37,7 +37,7 @@ const UserModel = ({ onClose }) => {
 
     return (
         <>
-            <div className="search-model-overlay" onClick={onClose}></div>
+            <div className="user-model-overlay" onClick={onClose}></div>
             <div className="user-model">
                 {!UserProfile ? (
                     <p>Loading...</p>

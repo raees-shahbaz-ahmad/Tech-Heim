@@ -29,6 +29,10 @@ const SingleProduct = () => {
         navigate(`/checkout?url=${url}`);
     }
 
+    const handleCartBtnClick = () => {
+        navigate(`/cart`);
+    }
+
     return (
         <div className="product-info-container">
             {!product ? (
@@ -60,7 +64,7 @@ const SingleProduct = () => {
 
                         <p className="price-par-month">$433.00</p>
                         <button onClick={() => { handleBuyNowClick(product.data.productURL) }} className="buy-now-btn">Buy now</button>
-                        <button className="add-cart">Add to Cart</button>
+                        <button onClick={handleCartBtnClick} className="add-cart">Add to Cart</button>
 
                     </div>
                 </>

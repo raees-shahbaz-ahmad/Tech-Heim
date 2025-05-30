@@ -42,14 +42,14 @@
 
 .search-svg {
     position: absolute;
-    right: -40px;
+    right: 20px;
     top: 16%;
     cursor: pointer;
 }
 
 .search-cross {
     position: absolute;
-    right: -75px;
+    right: -60px;
     top: 16%;
     cursor: pointer;
 }
@@ -156,11 +156,6 @@
     transform: translateX(-40px);
 }
 
-/* =============================== */
-/* 📱 Responsive Styles            */
-/* =============================== */
-
-/* Tablets (≤768px) */
 @media screen and (max-width: 768px) {
     .search-model {
         width: 90%;
@@ -174,11 +169,11 @@
     }
 
     .search-svg {
-        right: -20px;
+        right: 10px;
     }
 
     .search-cross {
-        right: -50px;
+        right: -20px;
     }
 
     .most-searched {
@@ -196,7 +191,6 @@
     }
 }
 
-/* Mobile (≤480px) */
 @media screen and (max-width: 480px) {
     .search-model {
         width: 95%;
@@ -244,5 +238,12 @@
 
     .product-card-wish-svg {
         top: 40px;
+    }
+
+    .input-content>input {
+        width: 92%;
+        margin: auto;
+        font-size: 14px;
+        padding: 10px;
     }
 }

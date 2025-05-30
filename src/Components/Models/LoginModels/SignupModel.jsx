@@ -29,18 +29,20 @@ const SignupModel = () => {
     }
 
     return (
-        <form className="input-content" onSubmit={handleSignupSubmit}>
+        <>
+            <form className="input-content" onSubmit={handleSignupSubmit}>
 
-            <input className="name" type="text" name='fullName' placeholder="Full Name" onChange={handleSignupChange} />
+                <input className="name" type="text" name='fullName' placeholder="Full Name" onChange={handleSignupChange} />
 
-            <input className="email" type="email" name='email' placeholder="E-mail" onChange={handleSignupChange} />
+                <input className="email" type="email" name='email' placeholder="E-mail" onChange={handleSignupChange} />
 
-            <input className="password" type="password" name="password" placeholder="Password" onChange={handleSignupChange} />
+                <input className="password" type="password" name="password" placeholder="Password" onChange={handleSignupChange} />
 
-            <input className="number" type="number" name='phoneNumber' placeholder="Phone Number" onChange={handleSignupChange} />
+                <input className="number" type="number" name='phoneNumber' placeholder="Phone Number" onChange={handleSignupChange} />
 
-            <button type='submit' className="login-btn signup-btn">Create Account</button>
-        </form>
+                <button type='submit' className="login-btn signup-btn">Create Account</button>
+            </form>
+        </>
     )
 }
 

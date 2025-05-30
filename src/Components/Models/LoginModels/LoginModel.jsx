@@ -9,7 +9,7 @@ const LoginModel = ({ onClose }) => {
 
     return (
         <>
-            <div className="search-model-overlay" onClick={onClose}></div>
+            <div className="login-model-overlay" onClick={onClose}></div >
             <div className="models">
                 <div className="accounts">
                     <button className="btn" onClick={() => setActiveForm('signin-content')}>Log in</button>
