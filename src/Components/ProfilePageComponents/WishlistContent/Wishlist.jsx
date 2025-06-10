@@ -3,7 +3,6 @@ import { addToCart } from '../../../Apis/addToCart';
 import { deleteWishlist } from '../../../Apis/deleteWishlistItem';
 import { showToast } from '../../Toast';
 import Cookies from "js-cookie";
-import "../WishlistContent/WishList.css";
 
 const Wishlist = () => {
     const [wishlist, setWishlist] = useState([]);
