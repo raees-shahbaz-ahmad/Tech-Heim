@@ -1,14 +1,14 @@
-.personal-data-container {
+.personal-data-container-2 {
     width: 80%;
     margin: 100px auto 20px;
 }
 
-.personal-data-container>.heading {
+.personal-data-container-2>.heading {
     font-size: 20px;
     font-weight: 500;
 }
 
-.personal-data-container>.para {
+.personal-data-container-2>.para {
     font-size: 16px;
     font-weight: 300;
     color: #717171;
@@ -16,8 +16,8 @@
 }
 
 .wishlist-container {
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
 }
 
 .wishlist-card {
-    width: 240px;
+    width: 235px;
     height: 280px;
     padding: 20px 10px;
     border-radius: 8px;
@@ -35,6 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .wishlist-card>img {
@@ -48,7 +49,8 @@
 }
 
 .wishlist-card>.btns {
-    width: 85%;
+    width: 95%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,4 +66,60 @@
 
 .btns>svg {
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .personal-data-container-2 {
+        width: 90%;
+        margin: 60px auto 20px;
+    }
+
+    .personal-data-container-2>.heading {
+        font-size: 18px;
+    }
+
+    .personal-data-container-2>.para {
+        font-size: 14px;
+    }
+
+    .wishlist-container {
+        width: 95%;
+        gap: 15px;
+    }
+
+    .wishlist-card {
+        /* width: 45%; */
+        height: auto;
+        padding: 15px 10px;
+    }
+
+    .wishlist-card>img {
+        height: 140px;
+    }
+
+    .btns>.btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist-card {
+        width: 100%;
+    }
+
+    .wishlist-card>img {
+        height: 120px;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .btns>.btn {
+        width: 100%;
+        text-align: center;
+    }
 }

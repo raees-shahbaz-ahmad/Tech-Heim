@@ -8,6 +8,72 @@
 
 .left-blog {
     width: 34%;
+    height: 100%;
+    box-shadow: 3px 3px 15px rgb(230, 230, 230);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.left-blog:hover,
+.left-blog-internal-content>.blog-heading:hover {
+    color: #f45e0c;
+}
+
+.left-blog-img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.left-blog-internal-content {
+    width: 100%;
+}
+
+.left-blog-date-time {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-blog-date-time>.date {
+    font-size: 12px;
+    font-weight: 300;
+    color: #717171;
+    display: flex;
+    justify-content: center;
+    align-items: anchor-center;
+    gap: 8px;
+}
+
+.date>svg {
+    vertical-align: bottom;
+}
+
+.left-blog-date-time>.time {
+    font-size: 12px;
+    font-weight: 300;
+    color: #717171;
+}
+
+.time>svg {
+    vertical-align: bottom;
+}
+
+.left-blog-internal-content>.blog-heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.left-blog-internal-content>.para {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.left-blog {
+    width: 34%;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
     border-radius: 8px;
     height: auto;
@@ -22,7 +88,8 @@
 }
 
 .left-blog-internal-content {
-    width: 100%;
+    width: 93%;
+    padding: 10px;
 }
 
 .right-blog {
@@ -30,6 +97,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+    cursor: pointer;
 }
 
 .top-blog {
@@ -38,9 +106,14 @@
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
 }
 
+.top-blog:hover,
+.blog-heading:hover {
+    color: #f45e0c;
+}
+
 .right-blog-img1 {
     border-radius: 8px;
-    width: 130px;
+    width: 230px;
     height: 100%;
     object-fit: cover;
 }
@@ -49,7 +122,7 @@
     padding: 20px;
 }
 
-.top-blog-content .heading {
+.top-blog-content .blog-heading {
     font-size: 16px;
     font-weight: 500;
 }
@@ -65,6 +138,10 @@
     color: #b8b8b8;
     font-size: 12px;
     font-weight: 300;
+    display: flex;
+    justify-content: flex-start;
+    align-items: anchor-center;
+    gap: 8px;
 }
 
 @media (max-width: 992px) {
@@ -82,8 +159,8 @@
     }
 
     .right-blog-img1 {
-        width: 100px;
-        height: 130px;
+        width: 175px;
+        height: 140px;
     }
 }
 
@@ -109,6 +186,12 @@
 
     .top-blog-content {
         padding: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .left-blog-internal-content>.blog-heading {
         text-align: center;
     }
 }

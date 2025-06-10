@@ -1,6 +1,18 @@
 .orders-container {
-    width: 100%;
+    width: 85%;
     margin: 100px auto 10px;
+}
+
+.orders-container>.heading {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.orders-container>.para {
+    font-size: 16px;
+    font-weight: 300;
+    color: #717171;
+    margin-top: 10px;
 }
 
 .orders {
@@ -20,7 +32,7 @@
     height: 100px;
 }
 
-.product-price{
+.product-price {
     margin-top: 5px;
 }
 

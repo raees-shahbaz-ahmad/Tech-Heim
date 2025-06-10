@@ -66,12 +66,16 @@ const BestSellers = () => {
         })
     }
 
+    const handleViewAllBtn = () => {
+        navigate(`/product`);
+    }
+
     return (
         <>
             <div className="best-sellers">
                 <div className="new-products-heading-content">
                     <div className="new-products-heading">Best Sellers</div>
-                    <div className="new-products-viewall">View all
+                    <div onClick={handleViewAllBtn} className="new-products-viewall">View all
                         <svg className="new-products-angle" viewBox="0 0 24 24" fill="currentcolor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -108,6 +112,7 @@ const BestSellers = () => {
                                 </svg>
 
                                 <button
+                                    className='product-button'
                                     style={{
                                         backgroundColor: "transparent",
                                         border: "none",

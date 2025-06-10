@@ -60,6 +60,7 @@ const Navbar = () => {
                 <li><Link to="/product">Products</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/faq">Faq</Link></li>
+                <li><Link to="/contactUs">Contact Us</Link></li>
             </ul>
 
             <div className="icon-links">

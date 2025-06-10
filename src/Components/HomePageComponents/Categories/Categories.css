@@ -1,29 +1,33 @@
 .categries {
-    width: 85%;
+    width: 95%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     margin-top: 20px;
     flex-wrap: wrap;
 }
 
 .categries-content {
+    width: 140px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
     box-shadow: 3px 3px 15px rgb(230, 230, 230);
     border-radius: 6px;
-    padding: 10px 25px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: transform 0.3s;
     background-color: #fff;
+    overflow: hidden;
 }
 
 .categries-img {
-    height: 135px;
+    height: 100px;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -36,6 +40,7 @@
     color: #7c7c7c;
     margin: 5px 0;
     text-align: center;
+    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {

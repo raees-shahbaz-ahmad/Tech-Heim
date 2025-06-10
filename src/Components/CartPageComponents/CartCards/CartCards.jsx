@@ -3,12 +3,23 @@ import { getUserCart } from '../../../Apis/getUserCart';
 import { deleteCart } from '../../../Apis/deleteCartItem';
 import { showToast } from '../../Toast';
 import { useNavigate } from 'react-router';
+import Cookies from 'js-cookie';
 import "./CartCards.css";
 
 const CartCards = () => {
-
     const [carts, setCarts] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
     const navigate = useNavigate();
+
+    const [quantity, setQuantity] = useState(() => {
+        const savedQuantities = Cookies.get('cartQuantities');
+        return savedQuantities ? JSON.parse(savedQuantities) : {};
+    });
+
+    useEffect(() => {
+        Cookies.set('cartQuantities', JSON.stringify(quantity), { expires: 7 });
+        calculateTotalPrice();
+    }, [quantity]);
 
     useEffect(() => {
         async function fetchCarts() {
@@ -16,6 +27,22 @@ const CartCards = () => {
                 const response = await getUserCart();
                 const data = Array.isArray(response) ? response : response?.data || [];
                 setCarts(data);
+
+                const newQuantities = { ...quantity };
+                let needsUpdate = false;
+
+                data.forEach(item => {
+                    if (!(item.id in newQuantities)) {
+                        newQuantities[item.id] = 1;
+                        needsUpdate = true;
+                    }
+                });
+
+                if (needsUpdate) {
+                    setQuantity(newQuantities);
+                }
+
+                calculateTotalPrice();
             } catch (error) {
                 console.error("Unable to get Carts", error);
             }
@@ -23,11 +50,45 @@ const CartCards = () => {
         fetchCarts();
     }, []);
 
+    useEffect(() => {
+        calculateTotalPrice();
+    }, [carts]);
+
+    const calculateTotalPrice = () => {
+        let total = 0;
+        carts.forEach(item => {
+            const itemPrice = item.discountedPrice > 0 ?
+                item.discountedPrice : item.originalPrice;
+            total += itemPrice * (quantity[item.id] || 1);
+        });
+        setTotalPrice(total);
+    };
+
+    const handleIncreaseQuantity = (id) => {
+        setQuantity(prev => ({
+            ...prev,
+            [id]: (prev[id] || 0) + 1
+        }));
+    }
+
+    const handledecreaseQuantity = (id) => {
+        setQuantity(prev => ({
+            ...prev,
+            [id]: prev[id] > 1 ? prev[id] - 1 : 1
+        }));
+    }
 
     const handleDelete = async (id) => {
         try {
             const result = await deleteCart(id);
             setCarts(prev => prev.filter(item => item.id !== id));
+
+            setQuantity(prev => {
+                const newQuantities = { ...prev };
+                delete newQuantities[id];
+                return newQuantities;
+            });
+
             if (result.status === 200) {
                 showToast("Cart Deleted Sucessfully!", "green");
             } else {
@@ -48,14 +109,17 @@ const CartCards = () => {
             <div className='cart-cards-payment-container'>
                 <div className="cart-cards-container-2">
                     {carts.map((value) => {
+                        const itemPrice = value.discountedPrice > 0 ?
+                            value.discountedPrice : value.originalPrice;
+                        const itemTotal = itemPrice * (quantity[value.id] || 1);
+
                         return (
-                            <div className="cart-product-2">
-                                <img src={`https://ecomerceapis.runasp.net/${value.productImages
-                                    }`} />
+                            <div className="cart-product-2" key={value.id}>
+                                <img src={`https://ecomerceapis.runasp.net/${value.productImages}`} alt={value.productName} />
                                 <div className="cart-product-content">
                                     <p className="product-name">{value.productName}</p>
                                     <p className="product-color">Black</p>
-                                    <p className="product-quantity">x1</p>
+                                    <p className="product-quantity">x{quantity[value.id] || 1}</p>
 
                                     <div className="delivery-content">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentcolor"
@@ -93,7 +157,7 @@ const CartCards = () => {
                                     </div>
 
                                     <div className="price-content">
-                                        <div className="price">{value.originalPrice}</div>
+                                        <div className="price">${itemTotal.toFixed(2)}</div>
                                         <div className="delete-content">
                                             <svg onClick={() => handleDelete(value.id)} width="16" height="16" viewBox="0 0 16 16" fill="currentcolor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +177,9 @@ const CartCards = () => {
                                                     d="M9.66634 8.83325H6.33301C6.05967 8.83325 5.83301 8.60658 5.83301 8.33325C5.83301 8.05992 6.05967 7.83325 6.33301 7.83325H9.66634C9.93967 7.83325 10.1663 8.05992 10.1663 8.33325C10.1663 8.60658 9.93967 8.83325 9.66634 8.83325Z"
                                                     fill="#C91433" />
                                             </svg>
-                                            <span>- 1 +</span>
+                                            <span className='increase-decrease' onClick={() => handledecreaseQuantity(value.id)}>-</span>
+                                            <span>{quantity[value.id] || 1}</span>
+                                            <span className='increase-decrease' onClick={() => handleIncreaseQuantity(value.id)}>+</span>
                                         </div>
                                     </div>
                                 </div>
@@ -126,25 +192,25 @@ const CartCards = () => {
                     <div className="heading">Payment Details</div>
                     <div className="subtotal-content">
                         <div className="subtotal">Subtotal</div>
-                        <div className="price">$519.52</div>
+                        <div className="price">${totalPrice.toFixed(2)}</div>
                     </div>
 
                     <div className="subtotal-content">
                         <div className="subtotal">Discount</div>
-                        <div className="price">-$111.87</div>
+                        <div className="price">-$0.00</div>
                     </div>
 
                     <div className="subtotal-content">
                         <div className="subtotal">Shipment cost</div>
-                        <div className="price">$22.50</div>
+                        <div className="price">$0.00</div>
                     </div>
                     <div className="sepration1" style={{ border: "1px solid lightgrey", margin: "10px 0" }}></div>
                     <div className="subtotal-content">
                         <div className="grandtotal">Grand Total</div>
-                        <div className="grandprice">$543.02</div>
+                        <div className="grandprice">${totalPrice.toFixed(2)}</div>
                     </div>
 
-                    <button onClick={handleCheckoutPage} className="cart-btn">Proceed to Checkout</button>
+                    <button onClick={handleCheckoutPage} className="cart-btn-2">Proceed to Checkout</button>
                 </div>
             </div>
         </>

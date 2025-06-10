@@ -1,9 +1,287 @@
-.faq-page{
-    width: 100%;
-    height: 50vh;
-    margin-top: 100px;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.faq-page>h1{
-    text-align: center;
+.faq-container {
+    width: 100%;
+    margin: 120px auto;
+    max-width: 1200px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 300;
+    gap: 10px;
+    margin: 20px 50px
+}
+
+.breadcrumb-item {
+    color: rgba(113, 113, 113, 1);
+}
+
+.breadcrumb-item.active {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.breadcrumb-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+.faq-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.faq-banner {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+    background-color: white;
+}
+
+.main-container {
+    width: 83%;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    background-color: white;
+}
+
+.left-side-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-side-container h6 {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(12, 12, 12);
+    margin-bottom: 15px;
+}
+
+.left-side-container p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(12, 12, 12);
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.left-side-container p.active {
+    color: blue;
+}
+
+.right-side-container {
+    width: 75%;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.card {
+    margin-bottom: 10px;
+    background-color: white;
+    border: none;
+}
+
+.card-header {
+    background-color: white;
+    padding: 0;
+    border: none;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #0C68F4;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+}
+
+.arrow.active {
+    transform: rotate(180deg);
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+.card-body {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    padding: 15px 0;
+}
+
+@media (max-width: 576px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .left-side-container,
+    .right-side-container {
+        width: 100%;
+    }
+
+    .faq-banner {
+        max-width: 100%;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .card-body {
+        font-size: 15px;
+    }
+
+    .breadcrumb {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .left-side-container,
+    .right-side-container {
+        width: 100%;
+    }
+
+    .left-side-container {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .left-side-container {
+        width: 30%;
+    }
+
+    .right-side-container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 30px;
+    }
+
+    .left-side-container,
+    .right-side-container {
+        width: 100%;
+    }
+
+    .left-side-container {
+        margin-bottom: 20px;
+    }
+
+    .faq-container {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        margin-top: 75px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    .card-body {
+        font-size: 16px;
+    }
+
+    .breadcrumb {
+        font-size: 14px;
+        flex-wrap: wrap;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .main-container {
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .card-body {
+        font-size: 15px;
+    }
+
+    .left-side-container h6 {
+        font-size: 18px;
+    }
+
+    .left-side-container p {
+        font-size: 14px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    .arrow {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .main-container {
+        padding: 0 10px;
+        gap: 0px;
+    }
+
+    .left-side-container-content {
+        display: flex;
+        gap: 10px;
+    }
 }

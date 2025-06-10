@@ -1,0 +1,154 @@
+.smart-watch-container {
+    width: 85%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 40px auto 10px;
+    background-color: #223949;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+}
+
+.smart-watch-container-shape {
+    width: 36%;
+    position: absolute;
+    right: 0%;
+}
+
+.smart-watch-content {
+    width: 38%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.smart-watch-content>.heading {
+    font-size: 44px;
+    font-weight: 500;
+    color: white;
+}
+
+.smart-watch-content>.para {
+    font-size: 24px;
+    font-weight: 200;
+    color: rgb(241, 235, 235);
+}
+
+.smart-watch-content>.btn {
+    background-color: #FF6951;
+    border: none;
+    border-radius: 6px;
+    color: #223949;
+    padding: 8px 18px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.smart-watch-img {
+    z-index: 1;
+    width: 45%;
+    height: auto;
+    max-height: 75%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {
+    .smart-watch-container {
+        gap: 40px;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .smart-watch-content {
+        width: 50%;
+    }
+
+    .smart-watch-img {
+        width: 40%;
+        max-height: 65%;
+    }
+
+    .smart-watch-content>.heading {
+        font-size: 36px;
+    }
+
+    .smart-watch-content>.para {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .smart-watch-container {
+        gap: 20px;
+        height: auto;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .smart-watch-content {
+        width: 60%;
+    }
+
+    .smart-watch-img {
+        width: 35%;
+    }
+
+    .smart-watch-content>.heading {
+        font-size: 28px;
+    }
+
+    .smart-watch-content>.para {
+        font-size: 16px;
+    }
+
+    .smart-watch-content>.btn {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+
+    .smart-watch-container-shape {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .smart-watch-container {
+        padding: 20px 10px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .smart-watch-content {
+        width: 65%;
+        gap: 10px;
+    }
+
+    .smart-watch-img {
+        width: 30%;
+    }
+
+    .smart-watch-content>.heading {
+        font-size: 18px;
+    }
+
+    .smart-watch-content>.para {
+        font-size: 12px;
+    }
+
+    .smart-watch-content>.btn {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}

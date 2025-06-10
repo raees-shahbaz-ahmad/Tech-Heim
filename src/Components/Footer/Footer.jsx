@@ -1,31 +1,50 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import "../Footer/Footer.css";
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
+    const handleContactUsClick = () => {
+        navigate("/contactUs");
+    }
+
+    const handleBlogClick = () => {
+        navigate("/blog");
+    }
+
+    const handleOrderClick = () => {
+        navigate("/orders");
+    }
+
+    const handleFaqClick = () => {
+        navigate("/faq");
+    }
+
     return (
         <footer>
             <div className="internal-footer">
                 <div className="footer-content">
                     <ul>
                         <div className="heading">Company</div>
-                        <li>about us</li>
-                        <li>blog</li>
-                        <li>returns</li>
-                        <li>order status</li>
+                        <li onClick={handleContactUsClick}>Contact Us</li>
+                        <li onClick={handleBlogClick}>Blog</li>
+                        <li onClick={handleOrderClick}>Order Status</li>
                     </ul>
 
                     <ul>
                         <div className="heading">Info</div>
-                        <li>How its work</li>
-                        <li>our promises</li>
-                        <li>FAQ</li>
+                        <li>How Its Work</li>
+                        <li>Our Promises</li>
+                        <li onClick={handleFaqClick} >FAQ</li>
                     </ul>
 
                     <ul>
-                        <div className="heading">Contact us</div>
+                        <div className="heading">Contact Us</div>
                         <li>123 Main Street,Anytown,USA</li>
                         <li>+1(555)-123-4567</li>
-                        <li>TechHiem@gmail.com</li>
+                        <li className='footer-email'>techhiem@gmail.com</li>
                     </ul>
 
                 </div>
@@ -66,7 +85,7 @@ const Footer = () => {
                     2023 Tech Heim.
                 </div>
                 <div className="sub-footer-content">
-                    <li>cookie settings</li>
+                    <li>Cookie Settings</li>
                     <li>Privacy Policy</li>
                     <li>Terms and Conditions </li>
                     <li>Imprint</li>

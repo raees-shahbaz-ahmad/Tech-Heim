@@ -56,7 +56,7 @@ const WishlistCards = () => {
 
     return (
         <>
-            <div className="personal-data-container">
+            <div className="personal-data-container-2">
                 <div className="heading">Wish list</div>
                 <div className="para">See your favorites list here</div>
             </div>

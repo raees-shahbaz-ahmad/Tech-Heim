@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import "../Blogs/Blogs.css";
 
 const Blogs = () => {
+
+    const navigate = useNavigate();
+    const handleViewAllBtn = () => {
+        navigate(`/blog`);
+    }
+
     return (
         <div className="new-products">
             <div className="new-products-heading-content">
                 <div className="new-products-heading">Our Blogs</div>
-                <div className="new-products-viewall">View all
+                <div onClick={handleViewAllBtn} className="new-products-viewall">View all
                     <svg className="new-products-angle" viewBox="0 0 24 24" fill="currentcolor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -19,7 +26,7 @@ const Blogs = () => {
             <div className="sepration" style={{ border: "1px solid #b4b4b4", marginTop: "15px" }}></div>
 
             <div className="blog-container">
-                <div className="left-blog">
+                <div onClick={handleViewAllBtn} className="left-blog">
                     <img className="left-blog-img" src="./left-blog-img.png" />
                     <div className="left-blog-internal-content">
                         <div className="left-blog-date-time">
@@ -77,7 +84,7 @@ const Blogs = () => {
                             </div>
                         </div>
 
-                        <div className="heading">
+                        <div className="blog-heading">
                             Meta Platforms plans to release free...
                         </div>
 
@@ -88,10 +95,10 @@ const Blogs = () => {
                 </div>
 
                 <div className="right-blog">
-                    <div className="top-blog">
+                    <div onClick={handleViewAllBtn} className="top-blog">
                         <img className="right-blog-img1" src="./right-blog-img1.png" />
                         <div className="top-blog-content">
-                            <div className="heading">8 Things You Probably Didn’t Know About Headphones</div>
+                            <div className="blog-heading">8 Things You Probably Didn’t Know About Headphones</div>
                             <div className="para">Owning a headphone could mean a different thing for different people.
                                 For
                                 some, it act as a fashion statement. It’s easy to spot these people, the headphone
@@ -136,10 +143,10 @@ const Blogs = () => {
                         </div>
                     </div>
 
-                    <div className="top-blog">
+                    <div onClick={handleViewAllBtn} className="top-blog">
                         <img className="right-blog-img1" src="./right-blog-img2.png" />
                         <div className="top-blog-content">
-                            <div className="heading">8 Things You Probably Didn’t Know About Headphones</div>
+                            <div className="blog-heading">8 Things You Probably Didn’t Know About Headphones</div>
                             <div className="para">Owning a headphone could mean a different thing for different people.
                                 For
                                 some, it act as a fashion statement. It’s easy to spot these people, the headphone

@@ -9,7 +9,7 @@ const Profile = ({ onClose }) => {
     useEffect(() => {
         const storedToken = Cookies.get("token");
         setToken(storedToken);
-    })
+    }, [])
 
     if (token) {
         return <UserModel onClose={onClose} />

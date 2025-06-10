@@ -20,7 +20,7 @@
     margin-top: 30px;
 }
 
-.edit-content {
+.edit-content-2 {
     width: 90%;
     height: 35px;
     background-color: #F9F9F9;
@@ -32,7 +32,7 @@
     margin-top: 10px;
 }
 
-.sub-edit-content {
+.sub-edit-content-2 {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@
     gap: 10px;
 }
 
-.sub-edit-content>p {
+.sub-edit-content-2>p {
     font-size: 12px;
     color: #717171;
 }
@@ -103,24 +103,35 @@
 .content {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 10px;
 }
 
 .content>.heading {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2D2D2D;
+}
+
+.price-content {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discounted-price {
     font-size: 12px;
     font-weight: 300;
     color: #2D2D2D;
 }
 
-.price-content {
-    font-size: 12px;
-    font-weight: 300;
-    text-align: right;
-}
-
-.price-content>span {
-    font-size: 12px;
+.price-content:nth-child(2) {
+    font-size: 14px;
     font-weight: 300;
     color: #2D2D2D;
 }
@@ -178,6 +189,14 @@
     font-weight: 300;
 }
 
+.total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
 .grandtotal {
     font-size: 16px;
     font-weight: 500;
@@ -190,7 +209,7 @@
     color: #2D2D2D;
 }
 
-.cart-btn {
+.cart-btn-2 {
     width: 100%;
     padding: 15px;
     font-size: 16px;
@@ -203,7 +222,6 @@
     margin-top: 20px;
 }
 
-/* Tablets (width ≤ 1024px) */
 @media screen and (max-width: 1024px) {
     .checkout-container {
         flex-direction: column;

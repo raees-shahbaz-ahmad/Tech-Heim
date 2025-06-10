@@ -5,6 +5,7 @@ import ProductsSale from '../Components/HomePageComponents/ProductsSale/Products
 import NewProducts from '../Components/HomePageComponents/NewProducts/NewProducts.jsx';
 import BestSellers from "../Components/HomePageComponents/BestSellers/BestSellers.jsx";
 import TopBrands from "../Components/HomePageComponents/TopBrands/TopBrands.jsx";
+import SmartWatch from '../Components/HomePageComponents/SmartWatch/SmartWatch.jsx';
 import Blogs from "../Components/HomePageComponents/Blogs/Blogs.jsx";
 import Services from "../Components/HomePageComponents/Services/Services.jsx";
 import Footer from "../Components/Footer/Footer.jsx";
@@ -18,6 +19,7 @@ const Home = () => {
             <NewProducts />
             <BestSellers />
             <TopBrands />
+            <SmartWatch />
             <Blogs />
             <Services />
             <Footer />

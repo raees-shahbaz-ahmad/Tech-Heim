@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { getUserProfile } from '../../Apis/UserProfile';
 import Cookies from 'js-cookie';
 import "./OrdersContent.css";
 
 const OrdersContent = () => {
+
+    const [profileContent, setProfileContent] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getUserProfile();
+            console.log(data);
+            setProfileContent(data);
+        }
+
+        fetchData();
+    }, []);
 
     const token = Cookies.get("token");
     const [orders, setOrders] = useState([]);
@@ -18,73 +31,51 @@ const OrdersContent = () => {
             });
 
             const data = await response.json();
-            console.log(data.data);
             setOrders(data.data);
         }
         GetOrders();
     }, []);
 
-    // return (
-
-    //     < div className="orders-container" >
-    //         {orders.map((value) => {
-    //             return (
-    //                 <div className="order-details">
-    //                     <div className="orders">
-    //                         <img src={`https://ecomerceapis.runasp.net/${value}`} />
-    //                         <div className="order-content">
-    //                             <div className="product-name">
-    //                                 {value.items.map((item) => {
-    //                                     item.productName
-    //                                 })}
-    //                             </div>
-    //                             <div className="product-quantity">Laptop</div>
-    //                             <div className="product-price">22000</div>
-    //                         </div>
-    //                         <div className="date">
-    //                             <p>Date:</p>
-    //                             <p>2025-02-22T10:28:05.302005</p>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             )
-    //         })}
-    //     </div >
-    // )
-
     return (
-        <div className="orders-container">
-            {orders.map((order) => (
-                <div className="order-details" key={order.orderId}>
-                    <div className="orders">
-                        <img
-                            src={`https://ecomerceapis.runasp.net${order.items[0]?.productImagePath}`}
-                            alt={order.items[0]?.productName || "Product Image"}
-                        />
+        <>
+            <div className="orders-container">
+                <div className="heading">Order History</div>
+                <div className="para">Track, return or purchase items</div>
 
-                        <div className="order-content">
-                            <div className="product-name">
-                                {order.items.map((item) => (
-                                    <div key={item.id}>
-                                        {item.productName}
-                                    </div>
-                                ))}
+                {orders.map((order) => (
+                    <>
+                        {console.log(order)}
+                        <div className="history-content">
+                            <div className="headings">
+                                <div className="heading">Product Name</div>
+                                <div className="value">{order.items[0].productName}</div>
                             </div>
-
-                            <div className="product-price">
-                                <p>Price: {order.totalAmount}</p>
+                            <div className="headings">
+                                <div className="heading">Placed on</div>
+                                <div className="value">{order.orderDate}</div>
+                            </div>
+                            <div className="headings">
+                                <div className="heading">Total</div>
+                                <div className="value">${order.totalAmount}</div>
+                            </div>
+                            <div className="headings">
+                                <div className="heading">Delivered</div>
+                                <div className="value">2023/08/22</div>
+                            </div>
+                            <div className="headings">
+                                <div className="heading">Sent to</div>
+                                <div className="value">{profileContent.data.fullName}</div>
                             </div>
                         </div>
 
-                        <div className="date">
-                            <p>Date:</p>
-                            <p>{new Date(order.orderDate).toLocaleDateString()}</p>
+                        <div className="history-content-images" >
+                            <img src={`https://ecomerceapis.runasp.net/${order.items[0].productImagePath}`} />
                         </div>
-                    </div>
-                </div>
-            ))}
-        </div>
+                    </>
+                ))}
+            </div >
+        </>
     )
 }
 
-export default OrdersContent
+export default OrdersContent;

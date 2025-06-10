@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 96%;
     z-index: 1000;
     display: flex;
     justify-content: space-around;
@@ -40,11 +40,20 @@
     color: #333;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
 .nav-links a:hover {
     color: #007bff;
+    transform: scale(1.02);
+    text-shadow: 0 0 5px rgba(149, 200, 255, 0.7);
+}
+
+.nav-links a:focus {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
 }
 
 .icon-links li {
@@ -52,9 +61,14 @@
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
 }
 
 .hamburger {
@@ -120,5 +134,17 @@
     .navbar {
         justify-content: space-between;
         padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .bar {
+        height: 1.5px;
+        width: 16px;
     }
 }

@@ -8,7 +8,7 @@ export async function getAllCategories() {
         });
 
         const result = await response.json();
-        const uptResult = result.data.slice(0, 5);
+        const uptResult = result.data.slice(0, 6);
         return uptResult;
     } catch (error) {
         console.error("Error fetching categories:", error);
